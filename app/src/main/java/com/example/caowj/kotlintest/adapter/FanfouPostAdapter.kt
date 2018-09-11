@@ -26,7 +26,7 @@ class FanfouPostAdapter(val context: Context, val list: List<FanfouPost>) : Recy
         this.inflater = LayoutInflater.from(context)
     }
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): FanfouPostsViewHolder? {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): FanfouPostsViewHolder {
         val view: View = inflater.inflate(R.layout.fanfou_item_layout, parent, false)
         return FanfouPostsViewHolder(view, mListener!!)
     }

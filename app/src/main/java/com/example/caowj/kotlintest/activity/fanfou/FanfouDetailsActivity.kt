@@ -51,7 +51,7 @@ class FanfouDetailsActivity : BaseActivity() {
 
                     val snackbar = Snackbar.make(avatar, R.string.load_failed, Snackbar.LENGTH_SHORT)
                     snackbar.view.setBackgroundColor(resources.getColor(R.color.colorPrimary))
-                    val textView: TextView = snackbar.view.findViewById(android.support.design.R.id.snackbar_text) as TextView
+                    val textView: TextView = snackbar.view.findViewById<TextView>(android.support.design.R.id.snackbar_text) as TextView
                     textView.setTextColor(resources.getColor(R.color.colorAccent))
                     snackbar.show()
 
@@ -94,7 +94,7 @@ class FanfouDetailsActivity : BaseActivity() {
 
             val snackbar = Snackbar.make(avatar, R.string.copy_to_clipboard_ok, Snackbar.LENGTH_SHORT)
             snackbar.view.setBackgroundColor(resources.getColor(R.color.colorPrimary))
-            val textView: TextView = snackbar.view.findViewById(android.support.design.R.id.snackbar_text) as TextView
+            val textView: TextView = snackbar.view.findViewById<TextView>(android.support.design.R.id.snackbar_text) as TextView
             textView.setTextColor(resources.getColor(R.color.colorAccent))
             snackbar.show()
 

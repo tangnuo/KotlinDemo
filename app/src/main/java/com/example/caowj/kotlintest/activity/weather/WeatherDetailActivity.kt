@@ -143,10 +143,10 @@ class WeatherDetailActivity : BaseActivity() {
         forecast_layout.removeAllViews()
         for (forecast in weather.daily_forecast) {
             val view = LayoutInflater.from(this).inflate(R.layout.forecast_item, forecast_layout, false)
-            val dateText = view.findViewById(R.id.date_text) as TextView
-            val infoText = view.findViewById(R.id.info_text) as TextView
-            val maxText = view.findViewById(R.id.max_text) as TextView
-            val minText = view.findViewById(R.id.min_text) as TextView
+            val dateText = view.findViewById<TextView>(R.id.date_text) as TextView
+            val infoText = view.findViewById<TextView>(R.id.info_text) as TextView
+            val maxText = view.findViewById<TextView>(R.id.max_text) as TextView
+            val minText = view.findViewById<TextView>(R.id.min_text) as TextView
             dateText.text = forecast.date
             infoText.text = forecast.cond.txt
             maxText.text = forecast.tmp.max

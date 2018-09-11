@@ -29,7 +29,7 @@ class MainAdapter(val mContext: Context, val list: List<FunctionInfo>) : Recycle
         return list.size
     }
 
-    override fun onCreateViewHolder(parent: ViewGroup?, viewType: Int): RecyclerView.ViewHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
         val view: View = inflater.inflate(R.layout.item_main, parent, false)
         return MainViewHolder(view, mListener!!)
     }
@@ -46,6 +46,7 @@ class MainAdapter(val mContext: Context, val list: List<FunctionInfo>) : Recycle
     fun setItemClickListener(listener: OnRecyclerViewOnClickListener) {
         this.mListener = listener
     }
+
 
     class MainViewHolder(itemView: View, listener: OnRecyclerViewOnClickListener) : RecyclerView.ViewHolder(itemView), View.OnClickListener {
 

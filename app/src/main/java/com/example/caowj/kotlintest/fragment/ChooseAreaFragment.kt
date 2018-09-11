@@ -51,7 +51,7 @@ class ChooseAreaFragment : Fragment() {
     private var selectedCity: City? = null
     private var currentLevel: Int = 0
 
-    override fun onCreateView(inflater: LayoutInflater?, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         val view = inflater!!.inflate(R.layout.choose_area, container, false)
         return view
     }
@@ -82,7 +82,7 @@ class ChooseAreaFragment : Fragment() {
                     val intent = Intent(activity, WeatherDetailActivity::class.java)
                     intent.putExtra("weather_id", weatherId)
                     startActivity(intent)
-                    activity.finish()
+                    (activity as WeatherChooseActivity).finish()
                 } else if (activity is WeatherDetailActivity) {
                     val activity = activity as WeatherDetailActivity
                     activity.drawer_layout.closeDrawers()
@@ -176,7 +176,7 @@ class ChooseAreaFragment : Fragment() {
         showProgressDialog()
         HttpUtil.sendOkHttpRequest(address, object : Callback {
             override fun onFailure(call: Call?, e: IOException?) {
-                activity.runOnUiThread {
+                activity?.runOnUiThread {
                     closeProgressDialog()
                     Toast.makeText(context, "加载失败", Toast.LENGTH_SHORT).show()
                 }
@@ -193,7 +193,7 @@ class ChooseAreaFragment : Fragment() {
                     result = Utility.handleCountyResponse(responseText, selectedCity!!.id)
                 }
                 if (result) {
-                    activity.runOnUiThread {
+                    activity?.runOnUiThread {
                         closeProgressDialog()
                         if ("province" == type) {
                             queryProvinces()

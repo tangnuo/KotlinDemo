@@ -23,11 +23,11 @@ class ThirdAdapter : RecyclerView.Adapter<ThirdAdapter.mViewHolder>() {
         return 5
     }
 
-    override fun onCreateViewHolder(parent: ViewGroup?, viewType: Int): mViewHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): mViewHolder {
         return mViewHolder(View.inflate(parent?.context, R.layout.item_third, null))
     }
 
-    override fun onBindViewHolder(holder: mViewHolder?, position: Int) {
+    override fun onBindViewHolder(holder: mViewHolder, position: Int) {
 
         /**
          * 代码注释：
