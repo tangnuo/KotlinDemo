@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.support.design.widget.Snackbar
 import android.support.v4.widget.SwipeRefreshLayout
 import android.support.v7.widget.LinearLayoutManager
+import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
@@ -68,9 +69,9 @@ class FanfouActivity : BaseActivity() {
 
                 if (!postsList.isEmpty()) {
                     postsList.clear()
-                    adapter!!.notifyDataSetChanged()
-                    loadData(parseDate(year, month, day).toString())
                 }
+                adapter!!.notifyDataSetChanged()
+                loadData(parseDate(year, month, day).toString())
 
                 y = year
                 m = month
@@ -128,10 +129,19 @@ class FanfouActivity : BaseActivity() {
         refresh.setColorSchemeColors(resources.getColor(R.color.colorAccent))
         // set refresh button's size
         refresh.setSize(SwipeRefreshLayout.DEFAULT)
+        // init the adapter
+        adapter = FanfouPostAdapter(this, postsList)
+        // attach adapter to recycler view
+        rv_main.adapter = adapter
+
     }
 
+    /**
+     * 如果取当前的日期，服务端可能没有对应的数据，具体情况查看目录：http://blog.fanfou.com/digest/json/
+     */
     fun loadData(date: String) {
 
+        Log.d("caowj","URL：http://blog.fanfou.com/digest/json/" + date + ".daily.json")
         // build the request
         val request = JsonObjectRequest(Request.Method.GET, "http://blog.fanfou.com/digest/json/" + date + ".daily.json", Response.Listener<JSONObject> {
 
@@ -187,6 +197,7 @@ class FanfouActivity : BaseActivity() {
 
         }, Response.ErrorListener {
 
+            Log.d("caowj","数据加载失败了，如果取当前的日期，服务端可能没有对应的数据，具体情况查看目录：http://blog.fanfou.com/digest/json/");
             // show error through snack bar
             val snackbar = Snackbar.make(fab, R.string.load_failed, Snackbar.LENGTH_SHORT)
             snackbar.view.setBackgroundColor(resources.getColor(R.color.colorPrimary))
