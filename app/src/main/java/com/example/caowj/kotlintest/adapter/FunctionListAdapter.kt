@@ -11,7 +11,7 @@ import kotlinx.android.synthetic.main.item_third.view.*
  * author: Administrator
  * date: 2017/9/26 17:11
  */
-class ThirdAdapter : RecyclerView.Adapter<ThirdAdapter.mViewHolder>() {
+class FunctionListAdapter(val objs: List<String>) : RecyclerView.Adapter<FunctionListAdapter.mViewHolder>() {
 
     var mListener: ((pos: Int) -> Unit)? = null
 
@@ -19,8 +19,9 @@ class ThirdAdapter : RecyclerView.Adapter<ThirdAdapter.mViewHolder>() {
         this.mListener = mListener
     }
 
+
     override fun getItemCount(): Int {
-        return 5
+        return objs?.size
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): mViewHolder {
@@ -36,7 +37,8 @@ class ThirdAdapter : RecyclerView.Adapter<ThirdAdapter.mViewHolder>() {
          */
 
         with(holder?.itemView!!) {
-            tv_content.text = "第 $position 条数据"
+            //            tv_content.text = "第 $position 条数据"
+            tv_content.text = objs.get(position)
             setOnClickListener { mListener?.invoke(position) }
         }
     }

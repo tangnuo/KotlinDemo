@@ -1,6 +1,6 @@
 package com.example.caowj.kotlintest.java;
 
-import com.example.caowj.kotlintest.activity.ThirdActivity;
+import com.example.caowj.kotlintest.activity.FunctionListActivity;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -21,6 +21,6 @@ public class Test1 {
 
 
     private void set() {
-        ss.add(ThirdActivity.class);
+        ss.add(FunctionListActivity.class);
     }
 }

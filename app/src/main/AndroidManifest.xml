@@ -21,7 +21,7 @@
         </activity>
         <activity android:name=".activity.FristActivity" />
         <activity android:name=".activity.SecondActivity" />
-        <activity android:name=".activity.ThirdActivity" />
+        <activity android:name=".activity.FunctionListActivity" />
         <activity android:name=".activity.fanfou.FanfouActivity" />
         <activity
             android:name=".activity.AboutActivity"
@@ -34,14 +34,17 @@
         <activity android:name=".activity.weather.WeatherChooseActivity" />
         <activity
             android:name=".activity.weather.WeatherDetailActivity"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
-
+            android:theme="@style/AppTheme.NoActionBar" />
 
         <service
             android:name=".service.AutoUpdateService"
             android:enabled="true"
             android:exported="true" />
 
+        <activity
+            android:name=".activity.weather.TestActivity"
+            android:label="@string/title_activity_test"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
 </manifest>

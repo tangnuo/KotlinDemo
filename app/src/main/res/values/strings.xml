@@ -34,4 +34,5 @@
     <string name="donate_message">支付宝账号将会复制到粘贴板，进入支付宝可直接粘贴完成捐赠，感谢您的支持！</string>
     <string name="github_url">https://github.com/marktony</string>
     <string name="ali_pay_account">marktonymengyi@gmail.com</string>
+    <string name="title_activity_test">TestActivity</string>
 </resources>

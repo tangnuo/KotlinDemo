@@ -6,7 +6,7 @@ import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.LinearLayoutManager
 import android.view.View
 import com.example.caowj.kotlintest.activity.FristActivity
-import com.example.caowj.kotlintest.activity.ThirdActivity
+import com.example.caowj.kotlintest.activity.FunctionListActivity
 import com.example.caowj.kotlintest.activity.fanfou.FanfouActivity
 import com.example.caowj.kotlintest.activity.weather.WeatherChooseActivity
 import com.example.caowj.kotlintest.adapter.MainAdapter
@@ -38,7 +38,7 @@ class MainActivity : AppCompatActivity() {
 
     private fun initData() {
         mainList.add(FunctionInfo(FristActivity::class.java, "小功能展示"))
-        mainList.add(FunctionInfo(ThirdActivity::class.java, "简单的RecyclerView列表"))
+        mainList.add(FunctionInfo(FunctionListActivity::class.java, "简单的RecyclerView列表"))
         mainList.add(FunctionInfo(FanfouActivity::class.java, "饭否APP"))
         mainList.add(FunctionInfo(WeatherChooseActivity::class.java, "天气"))
     }
