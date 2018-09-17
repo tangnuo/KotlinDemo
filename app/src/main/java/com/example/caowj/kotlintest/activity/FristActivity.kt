@@ -1,6 +1,7 @@
 package com.example.caowj.kotlintest.activity
 
 import android.os.Bundle
+import android.widget.Toast
 import com.example.caowj.kotlintest.R
 import com.example.caowj.kotlintest.common.BaseActivity
 import com.example.caowj.kotlintest.data.UserInfo
@@ -27,7 +28,7 @@ class FristActivity : BaseActivity() {
 
 
         button3.text = "函数扩展"
-        button3.setOnClickListener { toast("函数扩展") }
+        button3.setOnClickListener { toast("函数扩展", Toast.LENGTH_LONG) }
 
     }
 }
