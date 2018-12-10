@@ -44,5 +44,5 @@ class FunctionListAdapter(val objs: List<String>) : RecyclerView.Adapter<Functio
     }
 
 
-    class mViewHolder(itemView: View?) : RecyclerView.ViewHolder(itemView)
+    class mViewHolder(itemView: View?) : RecyclerView.ViewHolder(itemView!!)
 }
