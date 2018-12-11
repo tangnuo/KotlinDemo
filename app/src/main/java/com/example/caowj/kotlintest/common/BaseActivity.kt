@@ -1,6 +1,7 @@
 package com.example.caowj.kotlintest.common
 
 import android.support.v7.app.AppCompatActivity
+import android.widget.Toast
 
 /**
  * package: com.example.caowj.kotlintest.common
@@ -9,4 +10,8 @@ import android.support.v7.app.AppCompatActivity
  */
 open class BaseActivity : AppCompatActivity() {
     val tag = this.javaClass.simpleName
+
+    fun showToast(message: String) {
+        Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
+    }
 }

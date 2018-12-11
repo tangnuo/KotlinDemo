@@ -6,14 +6,15 @@ import android.util.Log
 import android.view.View
 import android.widget.Toast
 import com.example.caowj.kotlintest.R
+import com.example.caowj.kotlintest.common.BaseActivity
 import kotlinx.android.synthetic.main.activity_blog_demo1.*
 
 /**
- * 安装blog中的案例练习写法1
+ * 按照blog中的案例练习写法1
  *
  * https://blog.csdn.net/clandellen/article/details/76283527
  */
-class BlogDemo1Activity : AppCompatActivity(), View.OnClickListener {
+class BlogDemo1Activity : BaseActivity(), View.OnClickListener {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -100,10 +101,6 @@ class BlogDemo1Activity : AppCompatActivity(), View.OnClickListener {
             else -> showToast("其他情况")
         }
 
-    }
-
-    private fun showToast(s: String) {
-        Toast.makeText(this, s, Toast.LENGTH_SHORT).show()
     }
 
     open class Person {

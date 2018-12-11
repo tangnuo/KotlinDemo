@@ -45,7 +45,8 @@
             android:name=".activity.weather.TestActivity"
             android:label="@string/title_activity_test"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".activity.BlogDemo1Activity"></activity>
+        <activity android:name=".activity.BlogDemo1Activity" />
+        <activity android:name=".activity.BlogDemo2Activity"></activity>
     </application>
 
 </manifest>
