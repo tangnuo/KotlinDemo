@@ -37,7 +37,7 @@ class BlogDemo2Activity : BaseActivity() {
 
         recyclerView.adapter = BlogDemoAdapter2(items, itemClickListener)
 
-//        //写法三：
+//        //写法三（同2）：
 //        recyclerView.adapter = BlogDemoAdapter2(items) {
 //            showToast(it)
 //            Log.d("caowj", "" + it)
