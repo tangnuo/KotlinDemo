@@ -1,7 +1,6 @@
 package com.example.caowj.kotlintest.activity
 
 import android.os.Bundle
-import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
 import android.util.Log
@@ -14,7 +13,7 @@ import com.example.caowj.kotlintest.common.BaseActivity
 import kotlinx.android.synthetic.main.item_third.view.*
 
 /**
- * 按照blog中的案例练习写法1
+ * 按照blog中的案例练习写法2
  *
  * https://www.jianshu.com/p/847dbc10e60f
  */
@@ -36,12 +35,13 @@ class BlogDemo2Activity : BaseActivity() {
             Log.d("caowj", "" + it)
         }
 
-//        recyclerView.adapter= BlogDemo2Activity(items, itemClickListener)
+        recyclerView.adapter = BlogDemoAdapter2(items, itemClickListener)
 
-        recyclerView.adapter = BlogDemoAdapter2(items) {
-            showToast(it)
-            Log.d("caowj", "" + it)
-        }
+//        //写法三：
+//        recyclerView.adapter = BlogDemoAdapter2(items) {
+//            showToast(it)
+//            Log.d("caowj", "" + it)
+//        }
     }
 
     class BlogDemoAdapter(val items: List<String>) : RecyclerView.Adapter<BlogDemoAdapter.ViewHolder>() {
