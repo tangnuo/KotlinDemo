@@ -1,0 +1,76 @@
+apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+
+
+android {
+    compileSdkVersion rootProject.android.compileSdkVersion
+    buildToolsVersion rootProject.android.buildToolsVersion
+
+    defaultConfig {
+        minSdkVersion rootProject.android.minSdkVersion
+        targetSdkVersion rootProject.android.targetSdkVersion
+        versionCode rootProject.android.versionCode
+        versionName rootProject.android.versionName
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_7
+        targetCompatibility JavaVersion.VERSION_1_7
+
+//        kotlinOptions.freeCompilerArgs += ['-module-name', "$REPOSITORY_GROUP.$libName"]
+    }
+
+    sourceSets {
+        main {
+            file('src/main').listFiles().each {
+                // 找到所有res开头的资源目录
+                if (it.name == 'res' || it.name.startsWith('res_')) {
+                    println it.path
+                    res.srcDirs += it.path
+                }
+            }
+        }
+    }
+
+}
+
+dependencies {
+    implementation files('libs/commons-validator-1.6.jar')
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:${rootProject.kotlinVersion}"
+}
+
+//uploadArchives {
+//    repositories {
+//        mavenDeployer {
+//
+//            pom.version = "${libVersion}"
+//            pom.artifactId = "${libName}"
+//            pom.groupId = REPOSITORY_GROUP
+//            pom.name = "${libName}"
+//            pom.packaging = 'jar'
+//
+//            pom.whenConfigured { MavenPom pom ->
+//
+//                def dependencies = pom.dependencies.findAll { item ->
+//                    ("unspecified" == item.version)
+//                }
+//
+//                pom.dependencies.removeAll(dependencies)
+//            }
+//        }
+//    }
+//}
+
+//task dokkaJavaDoc(type: org.jetbrains.dokka.gradle.DokkaTask){
+//    outputFormat = 'html'
+//    outputDirectory = "$buildDir/javadoc"
+//    jdkVersion = 7
+//    skipDeprecated = true
+//}

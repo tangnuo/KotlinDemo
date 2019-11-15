@@ -10,6 +10,7 @@ import com.example.caowj.kotlintest.activity.BlogDemo2Activity
 import com.example.caowj.kotlintest.activity.FristActivity
 import com.example.caowj.kotlintest.activity.FunctionListActivity
 import com.example.caowj.kotlintest.activity.fanfou.FanfouActivity
+import com.example.caowj.kotlintest.kedacom.activity.LibTestActivity
 import com.example.caowj.kotlintest.activity.weather.WeatherChooseActivity
 import com.example.caowj.kotlintest.adapter.MainAdapter
 import com.example.caowj.kotlintest.data.FunctionInfo
@@ -44,6 +45,7 @@ class MainActivity : AppCompatActivity() {
         mainList.add(FunctionInfo(FunctionListActivity::class.java, "简单的RecyclerView列表"))
         mainList.add(FunctionInfo(FanfouActivity::class.java, "饭否APP"))
         mainList.add(FunctionInfo(WeatherChooseActivity::class.java, "天气"))
+        mainList.add(FunctionInfo(LibTestActivity::class.java, "kedacom_lib调用"))
     }
 
 }

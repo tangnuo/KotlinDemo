@@ -35,4 +35,29 @@
     <string name="github_url">https://github.com/marktony</string>
     <string name="ali_pay_account">marktonymengyi@gmail.com</string>
     <string name="title_activity_test">TestActivity</string>
+
+    <!--kedacom lib test begin -->
+    <string name="system_util">"系统工具类(SystemUtil)"</string>
+    <string name="date_time_util">"日期时间工具类(DateTimeUtil)"</string>
+    <string name="file_util">"文件操作工具类(FileUtil)"</string>
+    <string name="digest_util">"文件摘要工具类(DigestUtil)"</string>
+    <string name="codec_util">"编解码工具类(CodecUtil)——Base64等"</string>
+
+    <!--kedacom lib_util resource -->
+    <string name="os_density_dpi">"平台density/densityDpi"</string>
+    <string name="os_height_actionbar">"平台ActionBar高度"</string>
+    <string name="os_height_statusbar">"平台StatusBar高度"</string>
+    <string name="os_manufacturer">"制造商"</string>
+    <string name="os_imei">"IMEI"</string>
+    <string name="os_meid">"MEID(Android 8.0以上设备)"</string>
+    <string name="os_pixels">"屏幕分辨率"</string>
+    <string name="os_device">"设备名"</string>
+    <string name="os_model">"设备型号"</string>
+    <string name="os_radio_version">"基带版本"</string>
+    <string name="os_release">"Android 版本"</string>
+    <string name="os_display">"系统版本"</string>
+    <string name="os_serial">"Serial Number"</string>
+    <string name="os_ip">"IP Address"</string>
+
+    <!--kedacom lib test end -->
 </resources>
