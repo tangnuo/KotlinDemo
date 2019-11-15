@@ -42,6 +42,7 @@
     <string name="file_util">"文件操作工具类(FileUtil)"</string>
     <string name="digest_util">"文件摘要工具类(DigestUtil)"</string>
     <string name="codec_util">"编解码工具类(CodecUtil)——Base64等"</string>
+    <string name="native_bar">"native bar页面"</string>
 
     <!--kedacom lib_util resource -->
     <string name="os_density_dpi">"平台density/densityDpi"</string>

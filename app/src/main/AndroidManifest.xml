@@ -19,7 +19,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".kedacom.activity.SystemUtilTestActivity"></activity>
+        <activity android:name=".kedacom.activity.SystemUtilTestActivity" />
         <activity android:name=".kedacom.activity.LibTestActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>
@@ -52,6 +52,9 @@
 
         <activity android:name=".activity.BlogDemo1Activity" />
         <activity android:name=".activity.BlogDemo2Activity" />
+        <activity
+            android:name=".kedacom.activity.UniformNativeBarActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
     </application>
 
 </manifest>

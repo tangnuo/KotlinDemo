@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <attr format="color|reference" name="titleTextColor"/>
+    <attr format="dimension|reference" name="titleTextSize"/>
+    <attr format="reference" name="close"/>
+    <attr format="reference" name="more"/>
+    <attr name="naviIconShow" format="integer">
+        <enum name="enable" value="1"/>
+        <enum name="disable" value="0"/>
+    </attr>
+
+    <!-- 小程序风格AppBar -->
+    <declare-styleable name="MicroAppBar">
+        <attr name="titleTextColor"/>
+        <attr name="titleTextSize"/>
+        <attr name="naviIconShow"/>
+        <attr name="close"/>
+        <attr name="more"/>
+    </declare-styleable>
+
+    <!-- 双向切换AppBar -->
+    <declare-styleable name="BiswitchAppBar">
+        <attr format="reference" name="menu"/>
+        <attr format="reference" name="naviIcon"/>
+        <attr format="string|reference" name="title"/>
+        <attr name="mode">
+            <enum name="micro" value="0"/>
+            <enum name="normal" value="1"/>
+        </attr>
+        <attr name="titleTextColor"/>
+        <attr name="titleTextSize"/>
+        <attr name="naviIconShow"/>
+        <attr name="close"/>
+        <attr name="more"/>
+    </declare-styleable>
+
+</resources>

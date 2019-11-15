@@ -1,0 +1,87 @@
+apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+
+ext {
+    libVersion = rootProject.library.version
+    libName = rootProject.library.name
+}
+
+android {
+    compileSdkVersion rootProject.android.compileSdkVersion
+    buildToolsVersion rootProject.android.buildToolsVersion
+
+    defaultConfig {
+        minSdkVersion rootProject.android.minSdkVersion
+        targetSdkVersion rootProject.android.targetSdkVersion
+        versionCode rootProject.android.versionCode
+        versionName "${libVersion}"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+
+//        kotlinOptions.freeCompilerArgs += ['-module-name', "$REPOSITORY_GROUP.$libName"]
+    }
+
+    sourceSets {
+        main {
+            file('src/main').listFiles().each {
+                // 找到所有res开头的资源目录
+                if (it.name == 'res' || it.name.startsWith('res_')) {
+                    println it.path
+                    res.srcDirs += it.path
+                }
+            }
+        }
+    }
+
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+    implementation rootProject.depends['kotlin-stdlib']
+    implementation rootProject.depends['legacy-support-v4']
+    implementation rootProject.depends['annotations']
+    implementation rootProject.depends['appcompat']
+    implementation rootProject.depends['material']
+    implementation project(path: ':utilities')
+//    implementation rootProject.depends['kutilities']
+}
+
+//uploadArchives {
+//    repositories {
+//        mavenDeployer {
+//
+//            pom.version = "${libVersion}"
+//            pom.artifactId = "${libName}"
+//            pom.groupId = REPOSITORY_GROUP
+//            pom.name = "${libName}"
+//            pom.packaging = 'aar'
+//
+//            pom.whenConfigured { MavenPom pom ->
+//
+//                def dependencies = pom.dependencies.findAll { item ->
+//                    ("unspecified" == item.version)
+//                }
+//
+//                pom.dependencies.removeAll(dependencies)
+//            }
+//        }
+//    }
+//}
+//
+//task dokkaJavaDoc(type: org.jetbrains.dokka.gradle.DokkaTask){
+//    outputFormat = 'html'
+//    outputDirectory = "$buildDir/javadoc"
+//    jdkVersion = 8
+//    skipDeprecated = true
+//}

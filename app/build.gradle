@@ -13,15 +13,18 @@ android {
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
+
     buildTypes {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+
 //    dataBinding {
 //        enabled true
 //    }
+
 }
 
 dependencies {
@@ -47,6 +50,7 @@ dependencies {
     implementation 'com.squareup.okhttp3:okhttp:3.10.0'
     testImplementation 'junit:junit:4.12'
     implementation project(path: ':utilities')
+    implementation project(path: ':widgets')
 }
 repositories {
     mavenCentral()

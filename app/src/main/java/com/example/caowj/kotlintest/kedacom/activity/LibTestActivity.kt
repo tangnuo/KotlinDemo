@@ -50,6 +50,7 @@ class LibTestActivity : AppCompatActivity(), SimpleTextAdapter.OnItemClickListen
 //            getString(R.string.file_util) -> gotoTarget(FileUtilTestActivity::class.java)
 //            getString(R.string.digest_util) -> gotoTarget(DigestUtilTestActivity::class.java)
 //            getString(R.string.codec_util) -> gotoTarget(CodecUtilTestActivity::class.java)
+            getString(R.string.native_bar) -> gotoTarget(UniformNativeBarActivity::class.java)
         }
     }
 

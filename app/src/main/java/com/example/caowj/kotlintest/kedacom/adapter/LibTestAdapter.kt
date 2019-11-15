@@ -21,6 +21,8 @@ class LibTestAdapter(context: Activity) : SimpleTextAdapter(context) {
 //        mFunctionList.add(context.getString(R.string.codec_util))
 
 
+        mFunctionList.add(context.getString(R.string.native_bar))
+
 
     }
 }

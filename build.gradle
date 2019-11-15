@@ -11,6 +11,12 @@ buildscript {
     repositories {
         maven { url "http://maven.aliyun.com/nexus/content/repositories/google/" }
         maven { url "http://maven.aliyun.com/nexus/content/repositories/jcenter/" }
+        maven { url "https://maven.aliyun.com/repository/public" }
+        maven { url "https://maven.aliyun.com/repository/central" }
+        maven { url "https://maven.aliyun.com/repository/google" }
+        maven { url "https://maven.aliyun.com/repository/jcenter" }
+        maven { url 'https://dl.bintray.com/kotlin/kotlin-eap' }
+
         jcenter()
         google()
     }
@@ -25,11 +31,26 @@ allprojects {
     repositories {
         maven { url "http://maven.aliyun.com/nexus/content/repositories/google/" }
         maven { url "http://maven.aliyun.com/nexus/content/repositories/jcenter/" }
+        maven { url "https://maven.aliyun.com/repository/public" }
+        maven { url "https://maven.aliyun.com/repository/central" }
+        maven { url "https://maven.aliyun.com/repository/google" }
+        maven { url "https://maven.aliyun.com/repository/jcenter" }
+        maven { url 'https://dl.bintray.com/kotlin/kotlin-eap' }
+
         jcenter()
         google()
     }
 }
 
+subprojects {
+    apply plugin: 'maven'
+}
+
+configurations.all {
+    resolutionStrategy.cacheChangingModulesFor 0, 'seconds'//不使用缓存，使用仓库中最新的包
+}
+
 task clean(type: Delete) {
     delete rootProject.buildDir
 }
+

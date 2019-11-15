@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- tab中的item纵向分割线颜色-->
+    <attr name="tl_divider_color" format="color" />
+    <!-- tab中的item纵向分割线padding-->
+    <attr name="tl_divider_padding" format="dimension" />
+    <!-- tab中的item纵向分割线宽度-->
+    <attr name="tl_divider_width" format="dimension" />
+    <!-- tabitem选中指示器颜色-->
+    <attr name="tl_indicator_color" format="color|reference" />
+    <!-- tabitem选中指示器圆角的角度-->
+    <attr name="tl_indicator_corner_radius" format="dimension" />
+    <!-- tabitem选中指示器显示位置，TOP-显示到tab的顶部，BOTTOM-显示到tab的底部-->
+    <attr name="tl_indicator_gravity" format="enum">
+        <enum name="TOP" value="48" />
+        <enum name="BOTTOM" value="80" />
+    </attr>
+    <!-- tabitem选中指示器高度-->
+    <attr name="tl_indicator_height" format="dimension" />
+    <!-- tabitem选中指示器margin_bottom-->
+    <attr name="tl_indicator_margin_bottom" format="dimension" />
+    <!-- tabitem选中指示器margin_left-->
+    <attr name="tl_indicator_margin_left" format="dimension" />
+    <!-- tabitem选中指示器margin_right-->
+    <attr name="tl_indicator_margin_right" format="dimension" />
+    <!-- tabitem选中指示器margin_top-->
+    <attr name="tl_indicator_margin_top" format="dimension" />
+    <!-- tabitem选中指示器样式，Normal-正常纯色条形，TRIANGLE-三角形-->
+    <attr name="tl_indicator_style" format="enum">
+        <enum name="NORMAL" value="0" />
+        <enum name="TRIANGLE" value="1" />
+    </attr>
+    <!-- tabitem选中指示器样宽度-->
+    <attr name="tl_indicator_width" format="dimension" />
+    <!-- tabitem选中指示器样宽度是否与tabitem宽度相同-->
+    <attr name="tl_indicator_width_equal_title" format="boolean" />
+    <!-- tab内边距-->
+    <attr name="tl_tab_padding" format="dimension" />
+    <!-- tab的各个item宽度是否平均分配，设置为false时，需指定tl_tab_width，可实现横向滑动的tab-->
+    <attr name="tl_tab_space_equal" format="boolean" />
+    <!-- tab的各个item宽度值，当tl_tab_space_equal=false时，设置此值-->
+    <attr name="tl_tab_width" format="dimension" />
+    <!-- tab上的文本是否全部显示为大写字母-->
+    <attr name="tl_textAllCaps" format="boolean" />
+    <!-- tab上文本是否显示粗体，NONE-全部不显示为粗体，SELECT-选中的tabitem文本显示为粗体，BOTH-选中和未选中都显示为粗体-->
+    <attr name="tl_textBold" format="enum">
+        <enum name="NONE" value="0" />
+        <enum name="SELECT" value="1" />
+        <enum name="BOTH" value="2" />
+    </attr>
+    <!-- tab上文本选中状态的颜色-->
+    <attr name="tl_textSelectColor" format="color" />
+    <!-- tab上文本未选中状态的颜色-->
+    <attr name="tl_textUnselectColor" format="color" />
+    <!-- tab上文本字号-->
+    <attr name="tl_textsize" format="dimension" />
+    <!-- tab分隔线颜色-->
+    <attr name="tl_underline_color" format="color" />
+    <!-- tab分隔线居Tab的位置-->
+    <attr name="tl_underline_gravity" format="enum">
+        <enum name="TOP" value="48" />
+        <enum name="BOTTOM" value="80" />
+    </attr>
+    <!-- tab分隔线的高度-->
+    <attr name="tl_underline_height" format="dimension" />
+    <!-- tab是否显示图标，true-显示，false-不显示（只显示文字）-->
+    <attr name="tl_iconVisible" format="boolean" />
+    <!-- tab上图标宽度-->
+    <attr name="tl_iconWidth" format="dimension" />
+    <!-- tab上图标高度-->
+    <attr name="tl_iconHeight" format="dimension" />
+
+    <!-- tab上图标MarginTop-->
+    <attr name="tl_iconMarginTop" format="dimension" />
+    <!-- tab上文字MarginTop-->
+    <attr name="tl_textMarginTop" format="dimension" />
+
+    <declare-styleable name="MsgView">
+        <attr name="mv_backgroundColor" format="color" />
+        <attr name="mv_cornerRadius" format="dimension" />
+        <attr name="mv_strokeWidth" format="dimension" />
+        <attr name="mv_strokeColor" format="color" />
+        <attr name="mv_isRadiusHalfHeight" format="boolean" />
+        <attr name="mv_isWidthHeightEqual" format="boolean" />
+    </declare-styleable>
+
+    <declare-styleable name="SlidingTabLayout">
+        <attr name="tl_indicator_color" />
+        <attr name="tl_indicator_height" />
+        <attr name="tl_indicator_width" />
+        <attr name="tl_indicator_margin_left" />
+        <attr name="tl_indicator_margin_top" />
+        <attr name="tl_indicator_margin_right" />
+        <attr name="tl_indicator_margin_bottom" />
+        <attr name="tl_indicator_corner_radius" />
+        <attr name="tl_indicator_gravity" />
+        <attr name="tl_indicator_style" />
+        <attr name="tl_indicator_width_equal_title" />
+        <attr name="tl_underline_color" />
+        <attr name="tl_underline_height" />
+        <attr name="tl_underline_gravity" />
+        <attr name="tl_divider_color" />
+        <attr name="tl_divider_width" />
+        <attr name="tl_divider_padding" />
+        <attr name="tl_tab_padding" />
+        <attr name="tl_tab_space_equal" />
+        <attr name="tl_tab_width" />
+        <attr name="tl_textsize" />
+        <attr name="tl_textSelectColor" />
+        <attr name="tl_textUnselectColor" />
+        <attr name="tl_textBold" />
+        <attr name="tl_textAllCaps" />
+        <attr name="tl_iconVisible" />
+        <attr name="tl_iconWidth" />
+        <attr name="tl_iconHeight" />
+        <attr name="tl_iconMarginTop" />
+        <attr name="tl_textMarginTop" />
+    </declare-styleable>
+    <declare-styleable name="FragmentViewPagerTabLayout">
+        <attr name="tl_indicator_color" />
+        <attr name="tl_indicator_height" />
+        <attr name="tl_indicator_width" />
+        <attr name="tl_indicator_margin_left" />
+        <attr name="tl_indicator_margin_top" />
+        <attr name="tl_indicator_margin_right" />
+        <attr name="tl_indicator_margin_bottom" />
+        <attr name="tl_indicator_corner_radius" />
+        <attr name="tl_indicator_gravity" />
+        <attr name="tl_indicator_style" />
+        <attr name="tl_indicator_width_equal_title" />
+        <attr name="tl_underline_color" />
+        <attr name="tl_underline_height" />
+        <attr name="tl_underline_gravity" />
+        <attr name="tl_divider_color" />
+        <attr name="tl_divider_width" />
+        <attr name="tl_divider_padding" />
+        <attr name="tl_tab_padding" />
+        <attr name="tl_tab_space_equal" />
+        <attr name="tl_tab_width" />
+        <attr name="tl_textsize" />
+        <attr name="tl_textSelectColor" />
+        <attr name="tl_textUnselectColor" />
+        <attr name="tl_textBold" />
+        <attr name="tl_textAllCaps" />
+        <attr name="tl_iconVisible" />
+        <attr name="tl_iconWidth" />
+        <attr name="tl_iconHeight" />
+        <attr name="tl_iconMarginTop" />
+        <attr name="tl_textMarginTop" />
+        <!-- tab是否居fragment上方，true-居上方，false居下方-->
+        <attr name="tl_tabOnTop" format="boolean" />
+        <!-- tab部分的高度-->
+        <attr name="tl_tab_height" format="dimension" />
+        <!-- tab背景颜色-->
+        <attr name="tl_tab_background_color" format="color" />
+    </declare-styleable>
+</resources>

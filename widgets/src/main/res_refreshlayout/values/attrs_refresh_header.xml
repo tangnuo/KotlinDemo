@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="PhoenixHeader">
+        <attr format="color" name="phPrimaryColor"/>
+        <attr format="color" name="phAccentColor"/>
+    </declare-styleable>
+
+    <declare-styleable name="TaurusHeader">
+        <attr format="color" name="thPrimaryColor"/>
+    </declare-styleable>
+
+    <declare-styleable name="WaveSwipeHeader">
+        <attr format="color" name="wshPrimaryColor"/>
+        <attr format="color" name="wshAccentColor"/>
+        <attr format="color" name="wshShadowColor"/>
+        <attr format="dimension" name="wshShadowRadius"/>
+    </declare-styleable>
+
+    <declare-styleable name="MaterialHeader">
+        <attr format="color" name="mhPrimaryColor"/>
+        <attr format="color" name="mhShadowColor"/>
+        <attr format="dimension" name="mhShadowRadius"/>
+        <attr format="boolean" name="mhShowBezierWave"/>
+    </declare-styleable>
+
+    <declare-styleable name="MountainSceneView">
+        <attr format="color" name="msvPrimaryColor"/>
+        <attr format="dimension" name="msvViewportHeight"/>
+    </declare-styleable>
+
+    <declare-styleable name="FunGameView">
+
+        <attr format="string" name="fghMaskTextTop"/>
+        <attr format="string" name="fghMaskTextTopPull"/>
+        <attr format="string" name="fghMaskTextTopRelease"/>
+        <attr format="string" name="fghMaskTextBottom"/>
+        <attr format="dimension" name="fghMaskTextSizeTop"/>
+        <attr format="dimension" name="fghMaskTextSizeBottom"/>
+
+        <attr format="color" name="fghBackColor"/>
+        <attr format="color" name="fghLeftColor"/>
+        <attr format="color" name="fghMiddleColor"/>
+        <attr format="color" name="fghRightColor"/>
+        <attr format="string" name="fghTextLoading"/>
+        <attr format="string" name="fghTextLoadingFinished"/>
+        <attr format="string" name="fghTextLoadingFailed"/>
+        <attr format="string" name="fghTextGameOver"/>
+    </declare-styleable>
+
+    <declare-styleable name="FunGameHitBlockHeader">
+        <attr format="integer" name="fghBlockHorizontalNum"/>
+        <attr format="dimension" name="fghBallSpeed">
+            <!--<enum name="low" value="1.5dp" />-->
+            <!--<enum name="medium" value="3dp" />-->
+            <!--<enum name="fast" value="4.5dp" />-->
+        </attr>
+    </declare-styleable>
+
+    <declare-styleable name="StoreHouseHeader">
+        <attr format="string" name="shhText"/>
+        <attr format="dimension" name="shhLineWidth"/>
+        <attr format="dimension" name="shhDropHeight"/>
+        <attr format="boolean" name="shhEnableFadeAnimation"/>
+    </declare-styleable>
+
+
+    <declare-styleable name="DropBoxHeader">
+        <attr format="reference" name="dhDrawable1"/>
+        <attr format="reference" name="dhDrawable2"/>
+        <attr format="reference" name="dhDrawable3"/>
+    </declare-styleable>
+
+</resources>
