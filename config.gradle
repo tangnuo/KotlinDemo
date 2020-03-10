@@ -11,8 +11,8 @@ ext {
     ]
 
     ext {
-        gradlePluginVersion = '3.4.1'
-        kotlinVersion = '1.3.50'
+        gradlePluginVersion = '3.6.1'
+        kotlinVersion = '1.3.61'
     }
 
     depends = [
