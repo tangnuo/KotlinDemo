@@ -13,4 +13,7 @@ class Rectangle(
 
     override val isSquare: Boolean get() = length == height
     override fun calculateArea(): Double = height * length
+    override fun draw() {
+        super.draw()
+    }
 }

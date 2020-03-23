@@ -261,6 +261,7 @@ public class MaterialProgressDrawable extends Drawable implements Animatable {
         mRing.mAlpha = (alpha);
     }
 
+    @Override
     public int getAlpha() {
         return mRing.mAlpha;
     }

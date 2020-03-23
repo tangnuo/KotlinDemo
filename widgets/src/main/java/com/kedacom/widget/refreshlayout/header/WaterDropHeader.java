@@ -260,6 +260,7 @@ public class WaterDropHeader extends InternalAbstract implements RefreshHeader {
         imageView.setVisibility(GONE);
         mWaterDropView.createAnimator().start();//开始回弹
         dropView.animate().setDuration(150).alpha(0).setListener(new AnimatorListenerAdapter() {
+            @Override
             public void onAnimationEnd(Animator animation) {
                 dropView.setVisibility(GONE);
                 dropView.setAlpha(1);

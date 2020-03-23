@@ -74,6 +74,7 @@ public class MsgView extends TextView {
     }
 
 
+    @Override
     public void setBackgroundColor(int backgroundColor) {
         this.backgroundColor = backgroundColor;
         setBgSelector();

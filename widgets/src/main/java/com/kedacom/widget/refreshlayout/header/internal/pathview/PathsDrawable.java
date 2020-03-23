@@ -105,6 +105,7 @@ public class PathsDrawable extends PaintDrawable {
         }
     }
 
+    @Override
     public void setBounds(@NonNull Rect bounds) {
         setBounds(bounds.left, bounds.top, bounds.right, bounds.bottom);
     }

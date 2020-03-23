@@ -129,6 +129,7 @@ public class FunGameHitBlockHeader extends FunGameView {
     //</editor-fold>
 
     //<editor-fold desc="游戏控制">
+    @Override
     protected void resetConfigParams() {
         cx = racketLeft - 3 * BALL_RADIUS;
         cy = (int) (mHeaderHeight * .5f);

@@ -299,6 +299,7 @@ public class ClassicsHeader extends InternalClassics<ClassicsHeader> implements 
         return this;
     }
 
+    @Override
     public ClassicsHeader setAccentColor(@ColorInt int accentColor) {
         mLastUpdateText.setTextColor(accentColor & 0x00ffffff | 0xcc000000);
         return super.setAccentColor(accentColor);

@@ -1,6 +1,5 @@
 package com.example.caowj.kotlintest.test
 
-import android.util.Log
 import com.example.caowj.kotlintest.util.LogUtils
 
 /**
@@ -13,7 +12,8 @@ open class ParentClass(name: String) {
 
     init {
 //        Log.d("caowj","This is --> primary constructor, a=$a, name=$name")
-        LogUtils.d("caowj2", "This is --> primary constructor, a=$a, name=$name")
+//        LogUtils.d("caowj2", "This is --> primary constructor, a=$a, name=$name")
+        System.out.println("This is --> primary constructor, a=$a, name=$name")
     }
 
     open fun publicMethod() {

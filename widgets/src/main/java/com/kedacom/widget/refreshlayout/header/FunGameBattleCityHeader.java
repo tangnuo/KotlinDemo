@@ -145,6 +145,7 @@ public class FunGameBattleCityHeader extends FunGameView {
 
     //<editor-fold desc="游戏控制">
 
+    @Override
     protected void resetConfigParams() {
         status = FunGameView.STATUS_GAME_PREPARE;
         controllerPosition = DIVIDING_LINE_SIZE;
