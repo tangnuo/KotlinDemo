@@ -5,10 +5,7 @@ import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.LinearLayoutManager
 import android.view.View
-import com.example.caowj.kotlintest.activity.BlogDemo1Activity
-import com.example.caowj.kotlintest.activity.BlogDemo2Activity
-import com.example.caowj.kotlintest.activity.FristActivity
-import com.example.caowj.kotlintest.activity.FunctionListActivity
+import com.example.caowj.kotlintest.activity.*
 import com.example.caowj.kotlintest.activity.fanfou.FanfouActivity
 import com.example.caowj.kotlintest.kedacom.activity.LibTestActivity
 import com.example.caowj.kotlintest.activity.weather.WeatherChooseActivity
@@ -46,6 +43,7 @@ class MainActivity : AppCompatActivity() {
         mainList.add(FunctionInfo(FanfouActivity::class.java, "饭否APP"))
         mainList.add(FunctionInfo(WeatherChooseActivity::class.java, "天气"))
         mainList.add(FunctionInfo(LibTestActivity::class.java, "kedacom_lib调用"))
+        mainList.add(FunctionInfo(FileUriActivity::class.java, "File Uri解析"))
     }
 
 }

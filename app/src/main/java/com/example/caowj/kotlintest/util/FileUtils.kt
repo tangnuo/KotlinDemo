@@ -25,7 +25,6 @@ object FileUtils {
         } else {
             ""
         }
-
     }
 
     /**
@@ -33,7 +32,6 @@ object FileUtils {
      * dirPath 文件路径
      */
     fun mkDir(dirPath: String) {
-
         val dirArray = dirPath.split("/".toRegex())
         var pathTemp = ""
         for (i in 1 until dirArray.size) {

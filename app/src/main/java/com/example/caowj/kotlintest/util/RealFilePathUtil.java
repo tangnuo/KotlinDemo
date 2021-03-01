@@ -1,5 +1,6 @@
 package com.example.caowj.kotlintest.util;
 
+import android.annotation.SuppressLint;
 import android.content.ContentUris;
 import android.content.Context;
 import android.database.Cursor;
@@ -8,29 +9,19 @@ import android.os.Build;
 import android.os.Environment;
 import android.provider.DocumentsContract;
 import android.provider.MediaStore;
+import android.support.annotation.RequiresApi;
 
 /**
- * <pre>
- *     作者：Caowj
- *     邮箱：caoweijian@kedacom.com
- *     日期：2021/2/22 15:58
- * </pre>
+ * Created by rjt on 28/11/18.
+ * <p>
+ * https://github.com/rajat-singh-jasrotia/AndroidRealFilePathUtils/blob/master/RealFilePathUtil.java
  */
 
-public class ContentUriUtil {
-
-    /**
-     * Get a file path from a Uri. This will get the the path for Storage Access
-     * Framework Documents, as well as the _data field for the MediaStore and
-     * other file-based ContentProviders.
-     *
-     * @param context The context.
-     * @param uri The Uri to query.
-     * @author paulburke
-     */
+public class RealFilePathUtil {
+    @SuppressLint("NewApi")
     public static String getPath(final Context context, final Uri uri) {
-
-        final boolean isKitKat = Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT;;
+        //check for KITKAT or above
+        final boolean isKitKat = Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT;
 
         // DocumentProvider
         if (isKitKat && DocumentsContract.isDocumentUri(context, uri)) {
@@ -43,17 +34,10 @@ public class ContentUriUtil {
                 if ("primary".equalsIgnoreCase(type)) {
                     return Environment.getExternalStorageDirectory() + "/" + split[1];
                 }
-
-                // TODO handle non-primary volumes
             }
             // DownloadsProvider
             else if (isDownloadsDocument(uri)) {
-
-                final String id = DocumentsContract.getDocumentId(uri);
-                final Uri contentUri = ContentUris.withAppendedId(
-                        Uri.parse("content://downloads/public_downloads"), Long.valueOf(id));
-
-                return getDataColumn(context, contentUri, null, null);
+                return getDownloadFilePath(context, uri);
             }
             // MediaProvider
             else if (isMediaDocument(uri)) {
@@ -71,16 +55,16 @@ public class ContentUriUtil {
                 }
 
                 final String selection = "_id=?";
-                final String[] selectionArgs = new String[] {
+                final String[] selectionArgs = new String[]{
                         split[1]
                 };
 
                 return getDataColumn(context, contentUri, selection, selectionArgs);
             }
         }
+
         // MediaStore (and general)
         else if ("content".equalsIgnoreCase(uri.getScheme())) {
-
             // Return the remote address
             if (isGooglePhotosUri(uri))
                 return uri.getLastPathSegment();
@@ -94,17 +78,7 @@ public class ContentUriUtil {
 
         return null;
     }
-    /**
-     **
-     * Get the value of the data column for this Uri. This is useful for
-     * MediaStore Uris, and other file-based ContentProviders.
-     *
-     * @param context The context.
-     * @param uri The Uri to query.
-     * @param selection (Optional) Filter used in the query.
-     * @param selectionArgs (Optional) Selection arguments used in the query.
-     * @return The value of the _data column, which is typically a file path.
-     */
+
     public static String getDataColumn(Context context, Uri uri, String selection,
                                        String[] selectionArgs) {
 
@@ -113,7 +87,6 @@ public class ContentUriUtil {
         final String[] projection = {
                 column
         };
-
         try {
             cursor = context.getContentResolver().query(uri, projection, selection, selectionArgs,
                     null);
@@ -128,38 +101,54 @@ public class ContentUriUtil {
         return null;
     }
 
+    @RequiresApi(api = Build.VERSION_CODES.KITKAT)
+    public static String getDownloadFilePath(Context context, Uri uri) {
+        Cursor cursor = null;
+        final String[] projection = {
+                MediaStore.MediaColumns.DISPLAY_NAME
+        };
+        try {
+            cursor = context.getContentResolver().query(uri, projection, null, null, null);
+            if (cursor != null && cursor.moveToFirst()) {
 
-    /**
-     * @param uri The Uri to check.
-     * @return Whether the Uri authority is ExternalStorageProvider.
-     */
+//                //写法一：
+//                String fileName = cursor.getString(0);
+//                // TODO: 2021/3/1 手动拼接的路径，可能存在兼容性问题。
+//                String path = Environment.getExternalStorageDirectory().toString() + "/Download/" + fileName;
+//                if (!TextUtils.isEmpty(path)) {
+//                    return path;
+//                }
+
+                //写法二：https://blog.csdn.net/houdada_/article/details/107587762
+                String filePath = cursor.getString(cursor.getColumnIndex(projection[0]));
+                return filePath;
+            }
+        } finally {
+            cursor.close();
+        }
+        String id = DocumentsContract.getDocumentId(uri);
+        if (id.startsWith("raw:")) {
+            return id.replaceFirst("raw:", "");
+        }
+        Uri contentUri = ContentUris.withAppendedId(Uri.parse("content://downloads"), java.lang.Long.valueOf(id));
+
+        return getDataColumn(context, contentUri, null, null);
+    }
+
+
     public static boolean isExternalStorageDocument(Uri uri) {
         return "com.android.externalstorage.documents".equals(uri.getAuthority());
     }
 
-    /**
-     * @param uri The Uri to check.
-     * @return Whether the Uri authority is DownloadsProvider.
-     */
     public static boolean isDownloadsDocument(Uri uri) {
         return "com.android.providers.downloads.documents".equals(uri.getAuthority());
     }
 
-    /**
-     * @param uri The Uri to check.
-     * @return Whether the Uri authority is MediaProvider.
-     */
     public static boolean isMediaDocument(Uri uri) {
         return "com.android.providers.media.documents".equals(uri.getAuthority());
     }
 
-    /**
-     * @param uri The Uri to check.
-     * @return Whether the Uri authority is Google Photos.
-     */
     public static boolean isGooglePhotosUri(Uri uri) {
         return "com.google.android.apps.photos.content".equals(uri.getAuthority());
     }
-
 }
-
